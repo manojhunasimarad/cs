@@ -47,13 +47,18 @@ char receiver[500];
  
 int main()
 {
-     
-  char input;
+    char choice;
+
+printf("Do you want to establish connection(y/n)?");
+
+scanf(" %c",&choice);
+
+if(choice=='n'){return 0;}
+
+
+ char input;
   printf("pleaser input server as s or client as c\n");
-  scanf("%c",&input);
-
-
-
+  scanf(" %c",&input);
 if(input=='s')
 {
 
