@@ -92,7 +92,7 @@ int client()
     // printf("im inside client\n");
 
 
-    char *ip = "192.168.60.39";
+    char *ip = "192.168.60.79";
     // char sip[200];
     // char *ip = sip;
 
@@ -101,11 +101,11 @@ int client()
  
   int sockfd;
   struct sockaddr_in server_addr;
-  FILE *fp;
- char stringer[500];
- printf("enter the file name along with extension to be sent\n");
- scanf("%s",stringer);
-  char *filename = stringer;
+//   FILE *fp;
+//  char stringer[500];
+//  printf("enter the file name along with extension to be sent\n");
+//  scanf("%s",stringer);
+//   char *filename = stringer;
       sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if(sockfd < 0) {
     perror("[-]Error in socket\n");
@@ -130,8 +130,13 @@ int loop;
   printf("number of loops\n");
   scanf("%d",&loop);
     
-     for(int i=0;i<=loop;i++)
+     for(int i=0;i<loop;i++)
      {
+           FILE *fp;
+ char stringer[500];
+ printf("enter the file name along with extension to be sent\n");
+ scanf("%s",stringer);
+  char *filename = stringer;
   fp = fopen(filename, "r");
   if (fp == NULL) {
     perror("[-]Error in reading file.\n");
@@ -158,7 +163,7 @@ int server()
 // printf("im inside server\n");
   
   
-  char *ip = "192.168.60.79";
+  char *ip = "192.168.60.39";
     // char rip[200];
     //  char *ip = rip;
      int port = 8080;
@@ -202,13 +207,14 @@ int loop;
   printf("number of loops\n");
   scanf("%d",&loop);
     
-     for(int i=0;i<=loop;i++)
+     for(int i=0;i<loop;i++)
      {
 
 if(listen(sockfd, 10) == 0){
  printf("[+]Listening....\n");
- flag=3; //connected but ready to communication
- }else
+ flag=3; //connected but ready to communication. 
+ }
+ else
  {
  perror("[-]Error in listening\n");
     exit(1);
@@ -278,4 +284,3 @@ char receiver[500];
   }
   return;
 }
-
