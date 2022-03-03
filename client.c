@@ -91,7 +91,12 @@ int client()
 {
     // printf("im inside client\n");
 
+int loop;
 
+  printf("number of loops\n");
+  scanf("%d",&loop);
+       for(int i=0;i<loop;i++)
+       {
     char *ip = "192.168.60.79";
     // char sip[200];
     // char *ip = sip;
@@ -122,16 +127,13 @@ int client()
     perror("[-]Error in socket");
     exit(1);
   }
+
  printf("[+]Connected to Server.\n");
   int flag=1; //connection is done
 
-int loop;
-
-//   printf("number of loops\n");
-//   scanf("%d",&loop);
     
-//      for(int i=0;i<loop;i++)
-     {
+
+    
            FILE *fp;
  char stringer[500];
  printf("enter the file name along with extension to be sent\n");
