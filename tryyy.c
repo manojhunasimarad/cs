@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <arpa/inet.h>
-#define SIZE 1024
+#include"try.h"
 
 int client();
 int server();
@@ -102,7 +97,7 @@ int client()
     // char *ip = sip;
 
   int port = 8080;
-  int e,flag;
+  int e;
  
   int sockfd;
   struct sockaddr_in server_addr;
